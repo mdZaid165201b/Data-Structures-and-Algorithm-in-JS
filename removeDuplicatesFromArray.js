@@ -1,4 +1,4 @@
-// this is not the best case fro removing duplicates from an unsorted array
+// this is not the best approach to remove duplicates from an unsorted array
 
 let arr = [1,2,2,4,5,4];
 
