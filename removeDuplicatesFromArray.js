@@ -12,7 +12,7 @@ for(let i = 0; i < arr.length; i++){
     }
 }
 
-var count = 0;
+let count = 0;
 arr.forEach((elem, index) =>{
     if(arr[index] == undefined) count++;
 })
