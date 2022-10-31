@@ -34,3 +34,7 @@ let firstNonRepeatingCharacter = (str) => {
     }
   }
 }
+
+let str = "aaabcccdeeef";
+// let str = "abcbad";
+console.log(firstNonRepeatingCharacter(str));
