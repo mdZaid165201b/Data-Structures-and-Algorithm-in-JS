@@ -1,4 +1,4 @@
-// IMPORTANT
+// Take O(N ^ 2)
 
 let frequentCharacter = (str) => {
   let set = Array.from(new Set(str));
