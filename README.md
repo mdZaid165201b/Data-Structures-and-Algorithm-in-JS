@@ -1,1 +1,1 @@
-# Data-Structures-and-Algorithm-in-JS
+# Practice Problems-in-JS
