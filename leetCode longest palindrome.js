@@ -20,13 +20,10 @@ var longestPalindrome = function (str) {
                         if (t === t.split("").reverse().join("")) {
                             max = t.length > max.length ? t : max;
                         }
-                        else { continue; }
                     }
-                    else { continue; }
                 }
             }
         }
-        else { continue; }
     }
     return max;
 };
