@@ -2,7 +2,7 @@
  * @param {string} s
  * @return {string}
  */
-var longestPalindrome = function (str) {
+let longestPalindrome = function (str) {
     let max = "";
     if (str.split("").reverse().join("") === str) { return str; }
     else if (str.length <= 2) { return str[0] }
