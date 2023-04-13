@@ -74,7 +74,7 @@ class LinkedList {
             }
             else if(set.has(temp1.getNext())){
                 console.log(`cycle exist at node data ${temp1.getData()}`);
-                break;
+                return temp1;
             }
         }
     }
