@@ -78,6 +78,12 @@ class LinkedList {
             }
         }
     }
+    removeCycle () {
+        let cycleNode = this.findCycle();
+        if(cycleNode.getNext() !== null) {
+            cycleNode.setNext(null);
+        }
+    }
 
     helperCycle() {
         let temp1  = this.head;
