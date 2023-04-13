@@ -63,6 +63,23 @@ class LinkedList {
             return temp1.getData();
         }
     }
+    findNodeFromLastUsingStack(number) {
+     if (number === 1) return this.head.getData();
+     else if (number <= 0 || number > this.length) return console.log("invalid number!!!");
+     else {
+      const stack = [];
+      let temp1 = this.head;
+      while (temp1) {
+        stack.push(temp1);
+        temp1 = temp1.getNext();
+     }
+      let popedNode
+      for (let i = 0; i < number; i++) {
+        popedNode = stack.pop();
+      }
+      return popedNode;
+    }
+  }
 
     findCycle() {
         let set = new Set();
