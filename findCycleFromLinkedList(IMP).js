@@ -181,6 +181,44 @@ class LinkedList {
     }
     console.log(...array);
   }
+
+  maxOccurances() {
+    const hashMap = {};
+    let temp = this.head;
+    while(temp) {
+      if(!Object.hasOwn(hashMap, temp.getData())) {
+        hashMap[temp.getData()] = 0;
+      }
+      temp = temp.getNext()
+    }
+    temp = this.head;
+    while(temp) {
+      if(Object.hasOwn(hashMap, temp.getData())) {
+        hashMap[temp.getData()]++;
+      }
+      temp = temp.getNext();
+    }
+    const max = {
+      key: 0,
+      value: 0
+    };
+    Object.entries(hashMap).forEach(current => {
+      if(max === {}) {
+        max["key"] = current[0];
+        max["value"] = current[1];
+      }
+      else{
+        if(current[1] > max["value"]){
+          max["key"] = current[0],
+          max["value"] = current[1]
+        }
+      }
+    });
+  }
+
+  reverse() {
+    
+  }
 }
 
 const linkedList = new LinkedList();
@@ -188,13 +226,17 @@ linkedList.insertAtEnd(5);
 linkedList.insertAtEnd(10);
 linkedList.insertAtEnd(20);
 linkedList.insertAtEnd(30);
-linkedList.insertAtEnd(40);
+linkedList.insertAtEnd(20);
+linkedList.insertAtEnd(10);
+linkedList.insertAtEnd(5);
+linkedList.insertAtEnd(20);
 linkedList.print();
+linkedList.maxOccurances()
 // linkedList.helperCycle();
 // linkedList.findCycle();
 // linkedList.removeCycle();
 // linkedList.print();
-let requiredNode = linkedList.findNodeFromLastUsingStack(3);
+// let requiredNode = linkedList.findNodeFromLastUsingStack(3);
 // console.log(requiredNode.getData());
 // linkedList.removeNodeFromLast(5);
-linkedList.removeNodeFromLastTwo(3);
+// linkedList.removeNodeFromLastTwo(3);
