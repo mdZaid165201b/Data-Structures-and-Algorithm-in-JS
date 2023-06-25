@@ -15,7 +15,6 @@ const monthlyPayrollPeriods = (startDate, endDate) => {
             startDate: `${tempStartDate.getDate()}/${months[tempStartDate.getMonth()]}/${tempStartDate.getFullYear()}`,
             endDate: `${startDate.getDate()}/${months[startDate.getMonth()]}/${startDate.getFullYear()}`}); // startDate.getDate() - 1
         }
-        // startDate.setMonth(startDate.getMonth() + 1);
     console.log(periods) 
 }
 
