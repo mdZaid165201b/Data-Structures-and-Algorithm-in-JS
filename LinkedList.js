@@ -231,6 +231,16 @@ class LinkedList {
     console.log(this.head.getData())
 
   }
+
+  findMiddleElement() {
+    let fastNode = this.head;
+    let slowPointer = this.head;
+    while(fastNode != null && fastNode.next != null) {
+      fastNode = fastNode.getNext().getNext();
+      slowPointer = slowPointer.getNext();
+    }
+    return slowPointer.getData();
+  }
 }
 
 const linkedList = new LinkedList();
@@ -238,13 +248,16 @@ linkedList.insertAtEnd(5);
 linkedList.insertAtEnd(10);
 linkedList.insertAtEnd(20);
 linkedList.insertAtEnd(30);
-// linkedList.insertAtEnd(20);
-// linkedList.insertAtEnd(10);
+linkedList.insertAtEnd(40);
+linkedList.insertAtEnd(50);
+linkedList.insertAtEnd(10);
 // linkedList.insertAtEnd(5);
 // linkedList.insertAtEnd(20);
 linkedList.print();
-linkedList.reverse()
-linkedList.print();
+// linkedList.reverse()
+// linkedList.print();
+console.log(linkedList.findMiddleElement())
+// linkedList.print();
 // linkedList.maxOccurances()
 // linkedList.helperCycle();
 // linkedList.findCycle();
