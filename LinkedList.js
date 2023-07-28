@@ -241,12 +241,24 @@ class LinkedList {
     }
     return slowPointer.getData();
   }
+  findNthNodeFromLast(n) {
+    const hashTable = {};
+    let temp = this.head;
+    let i = 0;
+    while(temp) {
+      hashTable[`${i}`] = temp;
+      i++;
+      temp = temp.getNext();
+    }
+    return hashTable[`${i - n }`];
+  }
 }
 
 const linkedList = new LinkedList();
 linkedList.insertAtEnd(5);
 linkedList.insertAtEnd(10);
-linkedList.insertAtEnd(20);
+linkedList.insertAtEnd(20); // cycle exist!!!
+
 linkedList.insertAtEnd(30);
 linkedList.insertAtEnd(40);
 linkedList.insertAtEnd(50);
@@ -254,12 +266,14 @@ linkedList.insertAtEnd(10);
 // linkedList.insertAtEnd(5);
 // linkedList.insertAtEnd(20);
 linkedList.print();
+console.log(linkedList.findNthNodeFromLast(2));
 // linkedList.reverse()
 // linkedList.print();
-console.log(linkedList.findMiddleElement())
+// console.log(linkedList.findMiddleElement())
 // linkedList.print();
-// linkedList.maxOccurances()
 // linkedList.helperCycle();
+// linkedList.findCycleFromLinkedList();
+// linkedList.maxOccurances()
 // linkedList.findCycle();
 // linkedList.removeCycle();
 // linkedList.print();
