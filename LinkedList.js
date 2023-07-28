@@ -217,7 +217,18 @@ class LinkedList {
   }
 
   reverse() {
-    
+    let current = this.head;
+    let prev = null;
+    let next = null;
+    while(current) {
+      next = current.next;
+      current.setNext(prev);
+      prev = current;
+      this.head = current;
+      current = next;
+      next = null;
+    }
+    console.log(this.head.getData())
 
   }
 }
@@ -227,12 +238,14 @@ linkedList.insertAtEnd(5);
 linkedList.insertAtEnd(10);
 linkedList.insertAtEnd(20);
 linkedList.insertAtEnd(30);
-linkedList.insertAtEnd(20);
-linkedList.insertAtEnd(10);
-linkedList.insertAtEnd(5);
-linkedList.insertAtEnd(20);
+// linkedList.insertAtEnd(20);
+// linkedList.insertAtEnd(10);
+// linkedList.insertAtEnd(5);
+// linkedList.insertAtEnd(20);
 linkedList.print();
-linkedList.maxOccurances()
+linkedList.reverse()
+linkedList.print();
+// linkedList.maxOccurances()
 // linkedList.helperCycle();
 // linkedList.findCycle();
 // linkedList.removeCycle();
