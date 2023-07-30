@@ -252,6 +252,59 @@ class LinkedList {
     }
     return hashTable[`${i - n }`];
   }
+  getLinkedListLength() {
+    let count = 0;
+    let temp = this.head;
+    while(temp) {
+      count++;
+      temp = temp.getNext();
+    }
+    return count;
+  }
+  rotateLinkedList(n) {
+    let temp = this.head;
+    let newHead = null;
+    let linkedListLength = this.getLinkedListLength();
+    console.log({linkedListLength})
+    if(n < linkedListLength) {
+      let prevNodes = null;
+      let index = 0;
+      while(index <= n) {
+        prevNodes = temp;
+        temp = temp.getNext();
+        index++;
+      }
+      newHead = prevNodes;
+      temp = newHead;
+      while(temp.getNext()) {
+        temp = temp.getNext();
+      }
+      index = 0;
+      let temp2 = this.head;
+      while(index < n - 1) {
+        temp2 = temp2.getNext();
+        index++;
+      }
+      index = 0;
+      let temp3 = this.head;
+      let nextNode = null;
+      while(index < n) {
+        nextNode = temp3.getNext();
+        temp3.setNext(null);
+        temp.setNext(temp3);
+        temp = temp3;
+        temp3 = nextNode;
+        index++;
+      }
+      console.log({prevNodes})
+      this.head = prevNodes;
+      this.print();
+    }
+    else {
+      this.print();
+    }
+    
+  }
 }
 
 const linkedList = new LinkedList();
@@ -262,11 +315,12 @@ linkedList.insertAtEnd(20); // cycle exist!!!
 linkedList.insertAtEnd(30);
 linkedList.insertAtEnd(40);
 linkedList.insertAtEnd(50);
-linkedList.insertAtEnd(10);
+linkedList.insertAtEnd(60);
 // linkedList.insertAtEnd(5);
 // linkedList.insertAtEnd(20);
 linkedList.print();
-console.log(linkedList.findNthNodeFromLast(2));
+linkedList.rotateLinkedList(7);
+// console.log(linkedList.findNthNodeFromLast(2));
 // linkedList.reverse()
 // linkedList.print();
 // console.log(linkedList.findMiddleElement())
