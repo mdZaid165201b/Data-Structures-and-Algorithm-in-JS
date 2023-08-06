@@ -20,5 +20,12 @@ const findMinimum = (array, except = null) => {
     return min;
 }
 
+// using sorting with O(n) time complexity
+const findKthSmallestElementWithSorting = (array, k) => {
+    const sortedArray = [... array].sort((a, b) => a - b);
+    return sortedArray[k  - 1];
+}
+
 const array = [7, 10, 4, 3, 20, 15];
-console.log(findKthSmallestElement(array, 5));
+console.log(findKthSmallestElementWithSorting(array, 3));
+console.log(findKthSmallestElement(array, 3));
