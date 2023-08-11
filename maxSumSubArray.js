@@ -10,8 +10,23 @@ const maximumSumSubArray = (array) => {
         }
     }
     return maxArraySum;
-   
 }
-// const array = [-3, -4, 5, -1, 2, -4, 6, -1];
-const array = [-2, 3, -1, 2];
-console.log(maximumSumSubArray(array));
+const maximumSumSubArrayTwo = (array) => {
+    let currentSum = 0;
+    let maxSum = Number.MIN_VALUE;
+    let index = 0;
+    while(index < array.length) {
+        currentSum += array[index];
+        if(currentSum > maxSum) {
+            maxSum = currentSum;
+        }
+        if(currentSum < 0) {
+            currentSum = 0;
+        }
+        index++;
+    }
+    return maxSum;
+}
+const array = [-3, -4, 5, -1, 2, -4, 6, -1];
+// const array = [-2, 3, -1, 2];
+console.log(maximumSumSubArrayTwo(array));
