@@ -1,36 +1,33 @@
-//  check angram
-
-let checkAngram = (string1, string2) => {
-  
-  if(string1.length !== string2.length){ return false; }
-  else{
-    string1 = string1.split("");
-    string2 = string2.split("");
-    string1.sort();
-    string2.sort();
-    
-    for(let index in string1){
-      if(string1[index] !== string2[index]){ return false; }  
+const checkAngram = (string1, string2) => {
+    if(string1.length !== string2.length) return false;
+    string1 = string1.split("").sort();
+    string2 = string2.split("").sort();
+    for(let i = 0; i < string1.length; i++){
+        if(string1[i] !== string2[i]) return false;
     }
-
     return true;
-  }
 }
 
-checkAngram("binary","bainyr") ? console.log("Angram!!!") : console.log("Not Angram!!!"); 
-checkAngram("zaid","zbbd") ? console.log("Angram!!!") : console.log("Not Angram!!!"); 
-
-
-let checkAngramSecond = (str1, str2) => {
-  if(str1.length !== str2.length){ return false; }
-  else{
-    str1 = str1.toLowerCase();
-    str2 = str2.toLowerCase();
-    str1 = Array.from(str1).sort();
-    str2 = Array.from(str2).sort();
-    if(str1.join("") == str2.join("")){ return true; }
-    else{ return false; }
-  }
-  
+const checkAngramSecond = (string1, string2) => {
+    const hashMap = {};
+    const hashMap2 = {};
+    if(string1.length !== string2.length) return false;
+    for(let i = 0; i < string1.length; i++){
+        if(!hashMap[string1[i]]) {
+            hashMap[string1[i]] = 1
+            hashMap2[string2[i]] = 1
+        }
+        else {
+            hashMap[string1[i]] = hashMap[string1[i]]++;
+            hashMap2[string1[i]] = hashMap2[string1[i]]++;
+        }
+    }
+    for(let i = 0; i < string1.length; i++) {
+        if(hashMap[string1[i]] !== hashMap2[string2[i]]) return false;
+    }
+    return true;
+    
 }
-console.log(checkAngramSecond("binary", "baniry"));
+
+
+console.log(checkAngramSecond("listen", "silent"))
