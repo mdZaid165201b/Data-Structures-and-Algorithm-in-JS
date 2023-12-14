@@ -37,13 +37,6 @@ const checkPalindrom = (string, left, right) => {
         innerRight--;
     }
     return true;
-    // // testing
-    // while(left <= right) {
-    //     if(string[left] !== string[right]) { return false; }
-    //     left++;
-    //     right--;
-    // }
-    // return true;
 }
 
 const  string = "aabaacd";
