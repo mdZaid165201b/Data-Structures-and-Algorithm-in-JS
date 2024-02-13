@@ -23,6 +23,7 @@ const removeElementFromArrayInPlace = (array, value) => {
     console.log(array, 'array ::');
 }
 
-const array = [3,2,2,3];
+// const array = [3,2,2,3];
+const array = [1,1,2];
 
-removeElementFromArrayInPlace(array, 3);
+removeElementFromArrayInPlace(array, 1);
