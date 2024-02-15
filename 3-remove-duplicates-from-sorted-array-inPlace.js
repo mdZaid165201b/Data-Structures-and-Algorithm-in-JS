@@ -43,6 +43,6 @@ const removeDuplicatesFromSortedArray = (array) => {
 }
 
 // const array = [1,1,2]; // [0,0,1,1,1,2,2,3,3,4]
-const array = [0,0,1,1,1,2,2,3,3,4];
+const array = [0,0,1,1,1,2,2,3,3,4];        // Output: [0,   1,   2,   3,   4, '_',  '_',  '_',  '_',  '_']
 
 removeDuplicatesFromSortedArray(array);
