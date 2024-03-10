@@ -10,5 +10,6 @@ const rotateArrayByKPlaces = (array, k) => {
     console.log('array after rotation', array);
 }
 
-const array = [1,3,5,7,9];
-rotateArrayByKPlaces(array, 2);
+// const array = [1,3,5,7,9];
+const array = [1,2,3,4,5,6,7];
+rotateArrayByKPlaces(array, 3);
